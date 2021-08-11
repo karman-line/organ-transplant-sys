@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Organ Transplant</title>
+    <meta name="description" content="Scrollama: Sticky Overlay Example" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      #scrolly {
+        position: relative;
+        padding: 1rem;
+      }
+
+      #scrolly2 {
+        position: relative;
+        background-color: #f3f3f3;
+        padding: 1rem;
+      }
+
+      article {
+        position: relative;
+        padding: 0;
+        max-width: 20rem;
+        margin: 0 auto;
+      }
+
+      .para {
+        font-size: 20px;
+        margin: 10;
+        /* padding-left: 4vw;
+        padding-right: 4vw; */
+        text-align: justify;
+      }
+
+      .sticky-thing {
+        position: -webkit-sticky;
+        position: sticky;
+        left: 0;
+        width: 100%;
+        margin: 0;
+        background-color: white;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        z-index: -1;
+        top: 12.5vh;
+        height: 75vh;
+        /* Center everything inside */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .sticky-thing p {
+        font-size: 4rem;
+        font-weight: 700;
+        color: #fff;
+      }
+
+      .step {
+        margin: 0 auto 20rem auto;
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+
+      .step:last-child {
+        margin-bottom: 0;
+      }
+
+      .step.is-active p {
+        background-color: white;
+        border:solid;
+        color: #3b3b3b;
+        opacity: 1;
+      }
+
+      .step p {
+        text-align: center;
+        padding: 1rem;
+        font-size: 1.4rem;
+        background-color: #3b3b3b;
+        opacity: 0.3;
+      }
+      
+      .image {
+        background-size: cover;
+      }
+  
+  .legend {
+            display:flex;
+            font-size: 16px;
+            flex-direction:row;
+            justify-content:center; 
+            align-items:center;
+            margin-top: 10%;
+            }
+
+  .circle {
+    display: inline-flex;
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    /* margin-top: 100px; */
+    justify-content: center;}
+
+  .container {
+      align-items: center;
+      display: flex;
+      margin-left: 7.5%;
+      flex-wrap: wrap;
+  }
+    
+  .map {
+    align-items: center;
+    align-self: center;
+    margin-right: 0%;
+    margin-left: 7.5%;}
+     
+      .radar_subheads {
+        text-align: center;
+        font-size: 0.8em;
+          margin-top: 50px;
+          /* margin-bottom: 3px; */
+          /* margin-left: 250px; */
+          font-weight: 900;
+      }
+
+    #pop {
+      background-color: #E9A8A2;
+    }
+
+    #wait { background-color: #A5AFF3;}
+
+    #trans { background-color: LightSalmon;}
+
+
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <nav>
+        <a href="https://kaarnam.com/">&#8592 back to home</a>
+        <div class="nav__examples">
+          <!-- <p>Examples:</p>
+          <a href="basic.html">Basic</a>
+          <a href="progress.html">Progress</a>
+          <a href="sticky-side.html">Sticky Side</a>
+          <a href="sticky-overlay.html">Sticky Overlay</a> -->
+        </div>
+      </nav>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <section id="intro">
+        <h1 class="intro__hed">The wait for an organ transplant can be a long one. Some communities wait longer</h1>
+        
+        <p class="intro__dek">
+          <br>
+         By Karthika Namboothiri
+        </p>
+        
+        <br><br><p class="sub-hed">Aug. 13, 2021</p>
+        <br>
+        
+
+          <p class="para">Monica Fox, 49, was having a perfectly normal day at work in Flossmoor, Illinois, when she learnt her kidneys were failing. This was 2012, and as her doctors set her on her first of numerous dialysis sessions, she was told she would need a kidney transplant within the next five years to stay alive. She was also told she would not likely be healthy enough when she finally got one.
+          </p>
+          <br>
+          <p class="para">“My best chance was to find a living donor. And that's difficult for many reasons, particularly for African Americans. Because many times we're not healthy enough to help each other.”
+          </p>
+          <br>
+          <p class="para">But her race was just one factor that made finding a kidney on time a challenge. Fox joined the over 100,000 people on the national transplant waiting list, hoping against all odds to be matched with a potential donor, living or dead. While interracial transplanting is certainly common, there is a higher probability of being matched with a donor of one’s own race. The longer it takes to get the required organ transplant, the harder it becomes to live with the illness.</p>
+          <br><p class="para">In Illinois, more than half the patients on the waiting list are Black, according to data from the Health and Human Services’ Organ Procurement and Transplant Network (OPTN) database. In contrast, only 30% of those receiving transplants in the state are Black. Similar trends are observed in New York, and in Georgia, which has the lowest transplant rates in the nation.
+          </p>
+          
+        </section>
+
+        <div class='legend'>
+            <div class="circle" id='pop'></div>
+            <div>&nbsp;&nbsp;Share of Population &nbsp;&nbsp;&nbsp;&nbsp;</div>
+            <div class="circle" id='wait'></div>
+            <div>&nbsp;&nbsp;Waiting List &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+            <div class="circle" id ='trans'></div>
+            <div>&nbsp;&nbsp;Transplanted &nbsp;&nbsp;&nbsp;&nbsp;</div>
+        </div>
+        <br>
+        <br>
+        <!-- <div class='circle'>
+          <div id='pop'></div>
+          <div id='wait'></div>
+          <div id ='trans'></div>
+      </div> -->
+
+        <h2 class='radar_subheads'>Illinois</h2>
+
+        <div class='container'>
+          <iframe src="radar/Ill_P.html" width="450" height="450" frameBorder="0"></iframe>
+          <iframe src="radar/Ill_WL.html" width="450" height="450" frameBorder="0"></iframe>
+          <iframe src="radar/Ill_T.html" width="450" height="450" frameBorder="0"></iframe>
+        </div>
+
+        <h2 class='radar_subheads'>New York</h2>
+
+        <div class='container'>
+          <iframe src="radar/NY_P.html" width="450" height="450" frameBorder="0"></iframe>
+          <iframe src="radar/NY_WL.html" width="450" height="450" frameBorder="0"></iframe>
+          <iframe src="radar/NY_T.html" width="450" height="450" frameBorder="0"></iframe>
+        </div>
+
+        <h2 class='radar_subheads'>Georgia</h2>
+
+        <div class='container'>
+          <iframe src="radar/Geo_P.html" width="450" height="450" frameBorder="0"></iframe>
+          <iframe src="radar/Geo_WL.html" width="450" height="450" frameBorder="0"></iframe>
+          <iframe src="radar/Geo_T.html" width="450" height="450" frameBorder="0"></iframe>
+        </div>
+        <p style="text-align: left; margin-left: 60px;">*"Other" indicates Native/Pacific islander, American Indian/ Alaska Native and Mixed race </p>
+        <section id="intro">
+        <div class='intro__dek'>
+          <br>
+          <br>
+          <br>
+          <p class="para">Even outside the discussion of racial disparity in the organ transplant system, medical experts and policy makers constantly review methods to increase the number of national donors and improve the availability of organs to those who need it. According to the Division of Transplantation of the Health and Human Services (HHS), 17 people die each day simply waiting for an organ transplant.</p>
+          <br><p class="para">Many medical experts argue that not enough is being done to reduce the number of people being added to the waiting list to begin with. Early detection of failing organ health and better medical accessibility in many parts of the country would come a long way in preventing organ failure.</p>
+          <br><p class="para">“We have not made adequate policy changes to support equity in kidney disease care,” said Dr. Sumit Mohan, Nephrologist and Epidemiologist at Columbia University Medical Center, New York. </p>
+          <br><p class="para">“Someone who is either from a lower socioeconomic status or has a lower level of education, may not recognize when they need health care, or may choose to defer, which is a common problem.” </p>
+        </div>
+      </section>
+
+      <br><h2 class="radar_subheads">Patients of color are disproportionately represented in the Organ Waiting List in 2020</h2>
+      <br><br><br>
+      <section id="scrolly">
+        <div class="sticky-thing">
+          <p> </p>
+        </div>
+
+        <article>
+          <div class="step" data-step="1" data-image= "url('images/sankey_step1.png')"> 
+            <p>There are currently 107,464 people on the national Waiting list. Every nine minutes, someone new is added.</p>
+          </div>
+          <div class="step" data-step="2" data-image="url('images/sankey_step2.png')">
+            <p>A patient likely stays on the waitlist until they have a transplant, or until death.</p>
+          </div>
+          <div class="step" data-step="3" data-image="url('images/sankey_step3.png')">
+            <p>While Black people constitute about 13% of the country’s population, every third patient on the waitlist for a kidney is Black.</p>
+          </div>
+          <div class="step" data-step="4" data-image="url('images/sankey_step4.png')">
+            <p>Patients of color are overall disproportionately represented in the waiting list, a symptom of stark disparity in the socioeconomic health of various communities in the country.</p>
+          </div>
+          
+        </article>
+        <p style="text-align: left; margin-left: 60px;">*"Other" indicates Native/Pacific islander, American Indian/ Alaska Native and Mixed race </p>
+      </section>
+      
+      <!-- <section id="outro"></section> -->
+    </main>
+
+    <!-- <div class='debug'></div> -->
+    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+    <script src="https://unpkg.com/scrollama"></script>
+    <script>
+      var main = document.querySelector("main");
+      var scrolly = main.querySelector("#scrolly");
+      var sticky = scrolly.querySelector(".sticky-thing");
+      var article = scrolly.querySelector("article");
+      var steps = article.querySelectorAll(".step");
+
+      // initialize the scrollama
+      var scroller = scrollama();
+
+      // scrollama event handlers
+      function handleStepEnter(response) {
+        // response = { element, direction, index }
+        var el = response.element;
+
+        // remove is-active from all steps
+        // then add is-active to this step
+        steps.forEach(step => step.classList.remove('is-active'));
+        el.classList.add('is-active');
+
+        // update graphic based on step
+        // sticky.querySelector("p").innerText = el.dataset.step;
+        sticky.style.backgroundImage = el.dataset.image;
+        // sticky.style.backgroundImage = `url("images/vietnam${el.dataset.step}.jpg")`;
+      }
+        function handleStepExit(response) {
+        steps.forEach(step => step.classList.remove('is-active'));
+        steps2.forEach(step => step.classList.remove('is-active'));
+      }
+      function init() {
+        // 2. setup the scroller passing options
+        // 		this will also initialize trigger observations
+        // 3. bind scrollama event handlers (this can be chained like below)
+        scroller
+          .setup({
+            step: "#scrolly article .step",
+            offset: 0.33,
+            debug: false
+          })
+          .onStepEnter(handleStepEnter)
+          .onStepExit(handleStepExit);
+          scroller2
+          .setup({
+            step: "#scrolly2 article .step",
+            offset: 0.33,
+            debug: true
+          })
+          .onStepEnter(handleStepEnter2);
+        // setup resize event
+        window.addEventListener("resize", scroller.resize);
+        window.addEventListener("resize", scroller2.resize);
+      }
+     
+
+    
+    
+
+      // function init() {
+      //   // 2. setup the scroller passing options
+      //   // 		this will also initialize trigger observations
+      //   // 3. bind scrollama event handlers (this can be chained like below)
+      //   scroller
+      //     .setup({
+      //       step: "#scrolly article .step",
+      //       offset: 0.5,
+      //       debug: true
+      //     })
+      //     .onStepEnter(handleStepEnter);
+
+      //   // setup resize event
+      //   window.addEventListener("resize", scroller.resize);
+      // }
+
+      // kick things off
+      init();
+    </script>
+
+<section id="intro">
+  <div class='intro__dek'>
+    <br><br>
+     <br><p class="para">A new round of policies in 2019 by the Trump Administration committed to reducing end-stage kidney disease by moving more people receiving kidney dialysis away from commercial centers to in-home care ones, and providing financial compensation to encourage donors. This was applauded by medical experts, with Kevin Longino, CEO of National Kidney Foundation calling it a step to “revolutionize transplantation”.” </p>
+     <br><p class="para">While the foundation did laud the efforts of the old government, it was quick to remind the new one of the numerous other loopholes that still existed, stating that “the nation’s complex organ transplantation system is siloed, inefficient, and lacks accountability”. </p>
+     <br><p class="para">In a list of recommendations, it suggested moving away from the current non-government run system where an organ procurement organization (OPO) stands in the front-line of facilitating donations. </p>
+     <br><p class="para">“There needs to be a way to objectively measure whether or not these OPOs are working and what the consequences are for them not working,” said Dr. Dara Kass, Professor of Emergency Medicine at Columbia University Medical Center,  and board member of Organize.org, an organization that has strongly campaigned for OPO reforms. </p>
+     <br><p class="para">“If they are not meeting their metrics, what happens then? Because right now, nothing does.” </p>
+    <br><p class ="para">Each OPO, responsible for a specific region, is assessed and ranked by the HHS based on its performance in facilitating donations and transplants, and can decertify those that are not meeting targets."</p>
+    <br><p class ="para">To date, the HHS hasn’t decertified any.</p>
+  </section>
+  
+    <br><br>
+    <section class='map'>
+
+      <iframe title="Independent Organ procurement organizations (OPO) stand in the front-line of facilitating organ  donations" aria-label="Map" id="datawrapper-chart-K4UuL" src="https://datawrapper.dwcdn.net/K4UuL/4/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="595"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
+      </script> </section>
+    <section id="intro">
+    <br><br><p class ="para">For someone who requires an organ transplant, the wait feels endless. Constant uncertainty, frequent hospital visits, and the fear of being susceptible to other diseases as a result of lower immunity are just some of the concerns to be dealt with on a daily basis. Federal health policies that attempt to draw in more donors and provide early screening access to communities are crucial, and also contribute to narrowing Federal expenditure on Medicare bills.  </p>
+    <br><p class ="para">“I believe that transplant outcomes could be improved in at-risk populations if social determinants of health were addressed,” said Fox, who is now the Director of Outreach and Government Relations for the National Kidney Foundation of Illinois.</p>
+
+    <br><p class ="para">I know that if I had known more, when I first began, I would have made some different decisions along the way. There is a systemic problem. I don't know what the solution is, but I certainly believe that more awareness and education would help.”</p>
+      </p>
+    </div>
+  </section>
+  <br>
+  <br>
+  
+<section id="outro">
+  <p>All code for the story can be found at the author's Github page  <a href="www.kaarnam.com">here</a>.</p>
+</section>
+
+  </body>
+</html>

@@ -1,0 +1,121 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Fjalla One', sans-serif;
+  min-height: 1280px;
+  color: #3b3b3b;
+  font-size: 24px;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+a {
+  margin: 0;
+  font-weight: 200;
+  font-size: 12px;
+}
+
+.paragraphs {
+  font-size: 24px;
+  margin: 20;
+}
+
+a,
+a:visited,
+a:hover {
+  color: black;
+  text-decoration: none;
+  border-bottom: 2px solid currentColor;
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  background: #E9A8A2;
+  padding: 1rem;
+  padding-right: 5rem;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.nav__examples {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.nav__examples > * {
+  margin-right: 0.5rem;
+}
+
+#intro {
+  max-width: 40rem;
+  margin: 1rem auto;
+  text-align: center;
+}
+
+.intro__hed {
+  font-size: 1.8em;
+  margin: 1rem auto 0rem auto;
+  font-weight: bold;
+  text-align: center;
+  max-width: 50rem;
+}
+
+.intro__dek {
+  color: black;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+}
+.second_graf {
+  color: #8a8a8a;
+  text-align: justify;
+}
+.sub-hed {
+  color: grey;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 200;
+  font-style: italic;
+}
+#intro {
+  margin-bottom: 0px;
+}
+
+#outro {
+  height: 300px;
+  text-align: left;
+  margin-left: 40%;
+}
+
+@media (min-width: 840px) {
+  .nav__examples {
+    margin-top: 0;
+    margin-left: 2rem;
+  }
+}
